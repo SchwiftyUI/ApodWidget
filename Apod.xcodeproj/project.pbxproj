@@ -13,6 +13,17 @@
 		DEA243C5257F45AA002568DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA243C4257F45AA002568DE /* Preview Assets.xcassets */; };
 		DEA243D0257F45AB002568DE /* ApodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA243CF257F45AB002568DE /* ApodTests.swift */; };
 		DEA243DB257F45AB002568DE /* ApodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA243DA257F45AB002568DE /* ApodUITests.swift */; };
+		DEA243F2257F45B8002568DE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA243F1257F45B8002568DE /* WidgetKit.framework */; };
+		DEA243F4257F45B8002568DE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA243F3257F45B8002568DE /* SwiftUI.framework */; };
+		DEA243F7257F45B8002568DE /* ApodWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA243F6257F45B8002568DE /* ApodWidget.swift */; };
+		DEA243FA257F45B8002568DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA243F9257F45B8002568DE /* Assets.xcassets */; };
+		DEA243FC257F45B8002568DE /* ApodWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */; };
+		DEA243FD257F45B8002568DE /* ApodWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */; };
+		DEA24400257F45B8002568DE /* ApodWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEA243EF257F45B7002568DE /* ApodWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEA2440D257F4710002568DE /* Test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEA2440A257F4710002568DE /* Test.jpg */; };
+		DEA2440E257F4710002568DE /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA2440B257F4710002568DE /* Error.png */; };
+		DEA2440F257F4710002568DE /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA2440C257F4710002568DE /* Placeholder.png */; };
+		DEA24415257F4816002568DE /* ApodImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA24414257F4816002568DE /* ApodImageProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +41,28 @@
 			remoteGlobalIDString = DEA243B9257F45A9002568DE;
 			remoteInfo = Apod;
 		};
+		DEA243FE257F45B8002568DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA243B2257F45A9002568DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA243EE257F45B7002568DE;
+			remoteInfo = ApodWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEA24404257F45B8002568DE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DEA24400257F45B8002568DE /* ApodWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DEA243BA257F45A9002568DE /* Apod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apod.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +77,17 @@
 		DEA243D6257F45AB002568DE /* ApodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA243DA257F45AB002568DE /* ApodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodUITests.swift; sourceTree = "<group>"; };
 		DEA243DC257F45AB002568DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEA243EF257F45B7002568DE /* ApodWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ApodWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA243F1257F45B8002568DE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DEA243F3257F45B8002568DE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DEA243F6257F45B8002568DE /* ApodWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodWidget.swift; sourceTree = "<group>"; };
+		DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ApodWidget.intentdefinition; sourceTree = "<group>"; };
+		DEA243F9257F45B8002568DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEA243FB257F45B8002568DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEA2440A257F4710002568DE /* Test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Test.jpg; sourceTree = "<group>"; };
+		DEA2440B257F4710002568DE /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
+		DEA2440C257F4710002568DE /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		DEA24414257F4816002568DE /* ApodImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodImageProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +112,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA243EC257F45B7002568DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA243F4257F45B8002568DE /* SwiftUI.framework in Frameworks */,
+				DEA243F2257F45B8002568DE /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +130,8 @@
 				DEA243BC257F45A9002568DE /* Apod */,
 				DEA243CE257F45AB002568DE /* ApodTests */,
 				DEA243D9257F45AB002568DE /* ApodUITests */,
+				DEA243F5257F45B8002568DE /* ApodWidget */,
+				DEA243F0257F45B8002568DE /* Frameworks */,
 				DEA243BB257F45A9002568DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +142,7 @@
 				DEA243BA257F45A9002568DE /* Apod.app */,
 				DEA243CB257F45AB002568DE /* ApodTests.xctest */,
 				DEA243D6257F45AB002568DE /* ApodUITests.xctest */,
+				DEA243EF257F45B7002568DE /* ApodWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +185,38 @@
 			path = ApodUITests;
 			sourceTree = "<group>";
 		};
+		DEA243F0257F45B8002568DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEA243F1257F45B8002568DE /* WidgetKit.framework */,
+				DEA243F3257F45B8002568DE /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEA243F5257F45B8002568DE /* ApodWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DEA24409257F4708002568DE /* Assets */,
+				DEA243F6257F45B8002568DE /* ApodWidget.swift */,
+				DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */,
+				DEA243F9257F45B8002568DE /* Assets.xcassets */,
+				DEA243FB257F45B8002568DE /* Info.plist */,
+				DEA24414257F4816002568DE /* ApodImageProvider.swift */,
+			);
+			path = ApodWidget;
+			sourceTree = "<group>";
+		};
+		DEA24409257F4708002568DE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DEA2440B257F4710002568DE /* Error.png */,
+				DEA2440C257F4710002568DE /* Placeholder.png */,
+				DEA2440A257F4710002568DE /* Test.jpg */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,10 +227,12 @@
 				DEA243B6257F45A9002568DE /* Sources */,
 				DEA243B7257F45A9002568DE /* Frameworks */,
 				DEA243B8257F45A9002568DE /* Resources */,
+				DEA24404257F45B8002568DE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DEA243FF257F45B8002568DE /* PBXTargetDependency */,
 			);
 			name = Apod;
 			productName = Apod;
@@ -186,6 +275,23 @@
 			productReference = DEA243D6257F45AB002568DE /* ApodUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DEA243EE257F45B7002568DE /* ApodWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA24401257F45B8002568DE /* Build configuration list for PBXNativeTarget "ApodWidgetExtension" */;
+			buildPhases = (
+				DEA243EB257F45B7002568DE /* Sources */,
+				DEA243EC257F45B7002568DE /* Frameworks */,
+				DEA243ED257F45B7002568DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApodWidgetExtension;
+			productName = ApodWidgetExtension;
+			productReference = DEA243EF257F45B7002568DE /* ApodWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +312,9 @@
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = DEA243B9257F45A9002568DE;
 					};
+					DEA243EE257F45B7002568DE = {
+						CreatedOnToolsVersion = 12.2;
+					};
 				};
 			};
 			buildConfigurationList = DEA243B5257F45A9002568DE /* Build configuration list for PBXProject "Apod" */;
@@ -224,6 +333,7 @@
 				DEA243B9257F45A9002568DE /* Apod */,
 				DEA243CA257F45AB002568DE /* ApodTests */,
 				DEA243D5257F45AB002568DE /* ApodUITests */,
+				DEA243EE257F45B7002568DE /* ApodWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -252,6 +362,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA243ED257F45B7002568DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA2440E257F4710002568DE /* Error.png in Resources */,
+				DEA2440F257F4710002568DE /* Placeholder.png in Resources */,
+				DEA243FA257F45B8002568DE /* Assets.xcassets in Resources */,
+				DEA2440D257F4710002568DE /* Test.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA243FD257F45B8002568DE /* ApodWidget.intentdefinition in Sources */,
 				DEA243C0257F45A9002568DE /* ContentView.swift in Sources */,
 				DEA243BE257F45A9002568DE /* ApodApp.swift in Sources */,
 			);
@@ -280,6 +402,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA243EB257F45B7002568DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA243FC257F45B8002568DE /* ApodWidget.intentdefinition in Sources */,
+				DEA243F7257F45B8002568DE /* ApodWidget.swift in Sources */,
+				DEA24415257F4816002568DE /* ApodImageProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -292,6 +424,11 @@
 			isa = PBXTargetDependency;
 			target = DEA243B9257F45A9002568DE /* Apod */;
 			targetProxy = DEA243D7257F45AB002568DE /* PBXContainerItemProxy */;
+		};
+		DEA243FF257F45B8002568DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEA243EE257F45B7002568DE /* ApodWidgetExtension */;
+			targetProxy = DEA243FE257F45B8002568DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -415,6 +552,7 @@
 		DEA243E0257F45AB002568DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -436,6 +574,7 @@
 		DEA243E1257F45AB002568DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +673,46 @@
 			};
 			name = Release;
 		};
+		DEA24402257F45B8002568DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ApodWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SchwiftyUI.Apod.ApodWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEA24403257F45B8002568DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ApodWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SchwiftyUI.Apod.ApodWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,6 +748,15 @@
 			buildConfigurations = (
 				DEA243E6257F45AB002568DE /* Debug */,
 				DEA243E7257F45AB002568DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEA24401257F45B8002568DE /* Build configuration list for PBXNativeTarget "ApodWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA24402257F45B8002568DE /* Debug */,
+				DEA24403257F45B8002568DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
