@@ -9,18 +9,20 @@ import Foundation
 import SwiftUI
 
 enum ApodImageResponse {
-    case Success(image: UIImage)
+    case Success(image: UIImage, title: String)
     case Failure
 }
 
 struct ApodApiResponse: Decodable {
     var url: String
+    var title: String
 }
 
 class ApodImageProvider {
     static func getImageFromApi(completion: ((ApodImageResponse) -> Void)?) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
         let date = Date()
         let urlString = "https://api.nasa.gov/planetary/apod?api_key=eaRYg7fgTemadUv1bQawGRqCWBgktMjolYwiRrHK&date=\(formatter.string(from: date))"
         
@@ -54,13 +56,13 @@ class ApodImageProvider {
         let url = URL(string: apodApiResponse.url)!
         let urlRequest = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
-            parseImageFromResponse(data: data, urlResponse: urlResponse, error: error, completion: completion)
+            parseImageFromResponse(data: data, urlResponse: urlResponse, error: error, apodApiResponse: apodApiResponse, completion: completion)
         }
         task.resume()
         
     }
     
-    static func parseImageFromResponse(data: Data?, urlResponse: URLResponse?, error: Error?, completion: ((ApodImageResponse) -> Void)?) {
+    static func parseImageFromResponse(data: Data?, urlResponse: URLResponse?, error: Error?, apodApiResponse: ApodApiResponse, completion: ((ApodImageResponse) -> Void)?) {
         
         guard error == nil, let content = data else {
             print("error getting image data")
@@ -70,7 +72,7 @@ class ApodImageProvider {
         }
         
         let image = UIImage(data: content)!
-        let response = ApodImageResponse.Success(image: image)
+        let response = ApodImageResponse.Success(image: image, title: apodApiResponse.title)
         completion?(response)
     }
 }

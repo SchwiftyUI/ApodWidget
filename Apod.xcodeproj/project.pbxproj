@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE87F62A259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DE87F629259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition */; };
+		DE87F62B259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DE87F629259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition */; };
 		DEA243BE257F45A9002568DE /* ApodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA243BD257F45A9002568DE /* ApodApp.swift */; };
 		DEA243C0257F45A9002568DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA243BF257F45A9002568DE /* ContentView.swift */; };
 		DEA243C2257F45AA002568DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA243C1257F45AA002568DE /* Assets.xcassets */; };
@@ -17,8 +19,6 @@
 		DEA243F4257F45B8002568DE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA243F3257F45B8002568DE /* SwiftUI.framework */; };
 		DEA243F7257F45B8002568DE /* ApodWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA243F6257F45B8002568DE /* ApodWidget.swift */; };
 		DEA243FA257F45B8002568DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA243F9257F45B8002568DE /* Assets.xcassets */; };
-		DEA243FC257F45B8002568DE /* ApodWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */; };
-		DEA243FD257F45B8002568DE /* ApodWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */; };
 		DEA24400257F45B8002568DE /* ApodWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEA243EF257F45B7002568DE /* ApodWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DEA2440D257F4710002568DE /* Test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DEA2440A257F4710002568DE /* Test.jpg */; };
 		DEA2440E257F4710002568DE /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA2440B257F4710002568DE /* Error.png */; };
@@ -65,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE87F629259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ApodWidgetConfiguration.intentdefinition; sourceTree = "<group>"; };
 		DEA243BA257F45A9002568DE /* Apod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA243BD257F45A9002568DE /* ApodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodApp.swift; sourceTree = "<group>"; };
 		DEA243BF257F45A9002568DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		DEA243F1257F45B8002568DE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		DEA243F3257F45B8002568DE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		DEA243F6257F45B8002568DE /* ApodWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodWidget.swift; sourceTree = "<group>"; };
-		DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ApodWidget.intentdefinition; sourceTree = "<group>"; };
 		DEA243F9257F45B8002568DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA243FB257F45B8002568DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA2440A257F4710002568DE /* Test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Test.jpg; sourceTree = "<group>"; };
@@ -199,10 +199,10 @@
 			children = (
 				DEA24409257F4708002568DE /* Assets */,
 				DEA243F6257F45B8002568DE /* ApodWidget.swift */,
-				DEA243F8257F45B8002568DE /* ApodWidget.intentdefinition */,
 				DEA243F9257F45B8002568DE /* Assets.xcassets */,
 				DEA243FB257F45B8002568DE /* Info.plist */,
 				DEA24414257F4816002568DE /* ApodImageProvider.swift */,
+				DE87F629259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition */,
 			);
 			path = ApodWidget;
 			sourceTree = "<group>";
@@ -380,9 +380,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA243FD257F45B8002568DE /* ApodWidget.intentdefinition in Sources */,
 				DEA243C0257F45A9002568DE /* ContentView.swift in Sources */,
 				DEA243BE257F45A9002568DE /* ApodApp.swift in Sources */,
+				DE87F62A259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,9 +406,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA243FC257F45B8002568DE /* ApodWidget.intentdefinition in Sources */,
 				DEA243F7257F45B8002568DE /* ApodWidget.swift in Sources */,
 				DEA24415257F4816002568DE /* ApodImageProvider.swift in Sources */,
+				DE87F62B259321E600B43B0F /* ApodWidgetConfiguration.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

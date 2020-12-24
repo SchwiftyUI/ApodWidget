@@ -9,17 +9,17 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct ApodTimelineProvider: TimelineProvider {
+struct ApodTimelineProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> ApodTimelineEntry {
-        ApodTimelineEntry(date: Date(), image: UIImage(named: "Placeholder")!)
+        ApodTimelineEntry(date: Date(), image: UIImage(named: "Placeholder")!, text: "Sample Text", shouldShowText: true)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (ApodTimelineEntry) -> ()) {
-        let entry = ApodTimelineEntry(date: Date(), image: UIImage(named: "Placeholder")!)
+    func getSnapshot(for configuration: ApodWidgetConfigurationIntent, in context: Context, completion: @escaping (ApodTimelineEntry) -> ()) {
+        let entry = ApodTimelineEntry(date: Date(), image: UIImage(named: "Placeholder")!, text: "Sample Text", shouldShowText: configuration.ShouldShowText as? Bool ?? false)
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: ApodWidgetConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         ApodImageProvider.getImageFromApi() { apodImageResponse in
             var entries: [ApodTimelineEntry] = []
             var policy: TimelineReloadPolicy
@@ -27,12 +27,15 @@ struct ApodTimelineProvider: TimelineProvider {
             
             switch apodImageResponse {
             case .Failure:
-                entry = ApodTimelineEntry(date: Date(), image: UIImage(named: "Error")!, text: "Connection Error")
+                entry = ApodTimelineEntry(date: Date(), image: UIImage(named: "Error")!, text: "Connection Error", shouldShowText: true)
                 policy = .after(Calendar.current.date(byAdding: .minute, value: 15, to: Date())!)
                 break
-            case .Success(let image):
-                entry = ApodTimelineEntry(date: Date(), image: image)
-                policy = .after(Calendar.current.date(byAdding: .day, value: 1, to: Date())!)
+            case .Success(let image, let title):
+                entry = ApodTimelineEntry(date: Date(), image: image, text: title, shouldShowText: configuration.ShouldShowText as? Bool ?? false)
+                
+                let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+                let timeToReload = Calendar.current.date(bySettingHour: configuration.LoadAt?.hour ?? 0, minute: configuration.LoadAt?.minute ?? 0, second: configuration.LoadAt?.second ?? 0, of: tomorrow)!
+                policy = .after(timeToReload)
                 break
             }
             
@@ -47,6 +50,7 @@ struct ApodTimelineEntry: TimelineEntry {
     let date: Date
     let image: UIImage
     var text: String = ""
+    var shouldShowText: Bool = false
 }
 
 struct ApodWidgetEntryView : View {
@@ -60,7 +64,17 @@ struct ApodWidgetEntryView : View {
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
                 
-                Text(entry.text)
+                if entry.shouldShowText {
+                    Text(entry.text)
+                        .font(.caption)
+                        .foregroundColor(Color.black)
+                        .padding(2)
+                        .background(Color.white.opacity(0.4))
+                        .cornerRadius(5)
+                        .padding(.bottom, 3)
+                        .padding(.horizontal, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        .multilineTextAlignment(.center)
+                }
             }
         }
     }
@@ -71,7 +85,7 @@ struct ApodWidget: Widget {
     let kind: String = "ApodWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ApodTimelineProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: ApodWidgetConfigurationIntent.self, provider: ApodTimelineProvider()) { entry in
             ApodWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Astronomy picture of the day")
@@ -81,7 +95,17 @@ struct ApodWidget: Widget {
 
 struct ApodWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ApodWidgetEntryView(entry: ApodTimelineEntry(date: Date(), image: UIImage(named: "Test")!))
+        ApodWidgetEntryView(entry: ApodTimelineEntry(date: Date(), image: UIImage(named: "Test")!, text: "Sample Text"))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        
+        
+        ApodWidgetEntryView(entry: ApodTimelineEntry(date: Date(), image: UIImage(named: "Test")!, text: "Sample Text", shouldShowText: true))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        
+        ApodWidgetEntryView(entry: ApodTimelineEntry(date: Date(), image: UIImage(named: "Test")!, text: "Really Long Sample Text", shouldShowText: true))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        
+        ApodWidgetEntryView(entry: ApodTimelineEntry(date: Date(), image: UIImage(named: "Error")!, text: "Connection Error", shouldShowText: true))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
